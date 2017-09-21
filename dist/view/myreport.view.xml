@@ -1,0 +1,39 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="TMS.controller.myreport"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data" height="100%">
+	<Page title="Title" showHeader="false">
+		<content>
+			<mvc:XMLView viewName="TMS.view.header"/>
+			<Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>mytasks}"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<HBox>
+						<viz:VizFrame id="idVizFrame" vizProperties="{ title: {text : 'Task Visualization', visible : true}}" uiConfig="{applicationSet:'fiori'}" height='400px' width="600px" vizType='donut'>
+							<viz:dataset>
+								<viz.data:FlattenedDataset data="{/TasksCollection}">
+									<viz.data:dimensions>
+										<viz.data:DimensionDefinition name="tasktitle" value="{title}"/>
+									</viz.data:dimensions>
+									<viz.data:measures>
+										<viz.data:MeasureDefinition name="assigned" value="{ path:'type/weightage'}"/>
+									</viz.data:measures>
+								</viz.data:FlattenedDataset>
+							</viz:dataset>
+							<viz:feeds>
+								<viz.feeds:FeedItem uid="size" type="Measure" values="assigned"/>
+								<viz.feeds:FeedItem uid="color" type="Dimension" values="tasktitle"/>
+							</viz:feeds>
+						</viz:VizFrame>
+						<List headerText="{i18n>tasklist}" id="idTaskMyList" class="sapUiMarginLargeBegin" width="100%" items="{ path: '/TasksCollection' }">
+							<StandardListItem title="{title}" description="{description}" info="{path:'priority', formatter:'.formatter.setPriorityText'}" icon="{type/icon}" />
+						</List>
+					</HBox>
+				</content>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

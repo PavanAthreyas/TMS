@@ -1,0 +1,75 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
+	<Popover title="{i18n>TMS}" class="sapUiSizeCompact" placement="Auto">
+		<VBox class="sapUiSmallMargin">
+			<f:Form editable="true">
+				<f:title>
+					<core:Title text="{i18n>addtask}"/>
+				</f:title>
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+						emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer title="{i18n>taskdetails}">
+						<f:formElements>
+							<f:FormElement label="{i18n>taskname}">
+								<f:fields>
+									<Text text="{appstate>/taskscope/title}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>description}">
+								<f:fields>
+									<Text text="{appstate>/taskscope/description}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>priority}">
+								<f:fields>
+									<Text text="{parts : [ 'appstate>/taskscope/priority', 'appstate>/taskscope/title' ], formatter:'.formatter.setPriorityText'}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>tasktype}">
+								<f:fields>
+									<Text text="{appstate>/taskscope/type/title}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>assign}">
+								<f:fields>
+									<Text text="{path:'appstate>/taskscope/assignee', formatter:'.formatter.setUserName'}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>attachments}">
+								<f:fields>
+									<Text text="{appstate>/taskscope/attachments}"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="{i18n>comments}">
+						<f:formElements>
+							<f:FormElement>
+								<FeedInput post="handleOnCommentPost" icon="sap-icon://discussion-2" class="sapUiSmallMarginTopBottom">
+									<layoutData>
+										<l:GridData span="XL4 L12 M10 S4"/>
+									</layoutData>
+								</FeedInput>
+								<List class="sapUiSizeCompact" showSeparators="Inner" showNoData="false" items="{appstate>/taskscope/commentlist}">
+									<items>
+										<FeedListItem class="sapUiSizeCompact" sender="{path:'appstate>Author', formatter: '.formatter.setUserName'}" icon="{appstate>AuthorPicUrl}"
+											iconDensityAware="false" info="{appstate>Type}" timestamp="{appstate>Date}" text="{appstate>Text}"/>
+									</items>
+								</List>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</VBox>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button id="idPopoverFooterSave" type="Emphasized" text="{i18n>edit}" press="handleTaskEditPress"/>
+			</Toolbar>
+		</footer>
+	</Popover>
+</core:FragmentDefinition>

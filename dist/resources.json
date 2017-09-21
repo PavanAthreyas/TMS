@@ -1,0 +1,111 @@
+{
+    "resources": [
+        {
+            "name": "control/TaskCard.js"
+        },
+        {
+            "name": "control/List.js"
+        },
+        {
+            "name": "control/TaskCardRenderer.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "localservice/loginhandler.js"
+        },
+        {
+            "name": "localservice/tmshandler.js"
+        },
+        {
+            "name": "localservice/formatter.js"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/header.view.xml"
+        },
+        {
+            "name": "view/myreport.view.xml"
+        },
+        {
+            "name": "view/fragments/addproject.fragment.xml"
+        },
+        {
+            "name": "view/fragments/statuslistedit.fragment.xml"
+        },
+        {
+            "name": "view/fragments/statuslistdisplay.fragment.xml"
+        },
+        {
+            "name": "view/storyboard.view.xml"
+        },
+        {
+            "name": "view/login.view.xml"
+        },
+        {
+            "name": "view/landingpage.view.xml"
+        },
+        {
+            "name": "model/login_data.json"
+        },
+        {
+            "name": "model/app_state.json"
+        },
+        {
+            "name": "model/project_data.json"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "extended_runnable_file.html"
+        },
+        {
+            "name": "fioriHtmlRunner.html"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "css/preview.jpg"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "controller/myreport.controller.js"
+        },
+        {
+            "name": "controller/login.controller.js"
+        },
+        {
+            "name": "controller/header.controller.js"
+        },
+        {
+            "name": "controller/storyboard.controller.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/landingpage.controller.js"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

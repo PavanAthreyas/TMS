@@ -1,0 +1,308 @@
+{
+	"ProjectCollection": [{
+			"id": "01",
+			"code": "Dev",
+			"title": "Welcome Project",
+			"description": "Description of the prject in brief",
+			"statuslist": [{
+				"id": "S01",
+				"title": "New",
+				"color": "Grey",
+				"class": "TMSStatusNew",
+				"tasklist": [{
+					"id": "T01",
+					"title": "Simple Task",
+					"description": "This is a new task with high priority",
+					"type": {
+						"id": "TY01",
+						"title": "Requirement",
+						"icon": "sap-icon://add-activity",
+						"weightage": "100"
+					},
+					"priority": [{
+						"id": "PR03",
+						"title": "Low",
+						"statuscolor": "Success"
+					}, {
+						"id": "PR02",
+						"title": "Medium",
+						"statuscolor": "Warning"
+					}, {
+						"id": "PR01",
+						"title": "High",
+						"statuscolor": "Error"
+					}],
+					"assignee": "01",
+					"comments": "1",
+					"commentlist": [{
+						"Author": "01",
+						"AuthorPicUrl": "",
+						"Type": "info",
+						"Date": "September 19 2017",
+						"Text": "The Task required more time on planning"
+					}],
+					"attachments": "0"
+				}, {
+					"id": "T02",
+					"title": "Bug due to cache",
+					"description": "Requires user to hard reload",
+					"type": {
+						"id": "TY03",
+						"title": "Bug",
+						"icon": "sap-icon://warning2",
+						"weightage": "10"
+					},
+					"priority": [{
+						"id": "PR03",
+						"title": "Low",
+						"statuscolor": "Success"
+					}],
+					"assignee": "02",
+					"comments": "2",
+					"commentlist": [{
+						"Author": "01",
+						"AuthorPicUrl": "",
+						"Type": "info",
+						"Date": "September 19 2017",
+						"Text": "The Task required more time on planning"
+					}, {
+						"Author": "03",
+						"AuthorPicUrl": "",
+						"Type": "info",
+						"Date": "September 19 2017",
+						"Text": "Okay! Lets have a discussion then"
+					}],
+					"attachments": "0"
+				}]
+			}, {
+				"id": "S02",
+				"title": "In Progress",
+				"color": "Blue",
+				"class": "TMSStatusInProgress",
+				"tasklist": [{
+					"id": "T03",
+					"title": "Add Comments Section",
+					"description": "This is a task with medium priority",
+					"type": {
+						"id": "TY02",
+						"title": "Enhancement",
+						"icon": "sap-icon://activate",
+						"weightage": "50"
+					},
+					"priority": [{
+						"id": "PR03",
+						"title": "Low",
+						"statuscolor": "Success"
+					}, {
+						"id": "PR02",
+						"title": "Medium",
+						"statuscolor": "Warning"
+					}],
+					"assignee": "02",
+					"comments": "0",
+					"commentlist": [],
+					"attachments": "0"
+				}]
+			}, {
+				"id": "S03",
+				"title": "Completed",
+				"color": "Green",
+				"class": "TMSStatusCompleted",
+				"tasklist": [{
+					"id": "T04",
+					"title": "Create Custom Control for UI5 Page",
+					"description": "Long description about the requirement should be fitting well enough to play and modify data",
+					"type": {
+						"id": "TY01",
+						"title": "Requirement",
+						"icon": "sap-icon://add-activity",
+						"weightage": "100"
+					},
+					"priority": [{
+						"id": "PR03",
+						"title": "Low",
+						"statuscolor": "Success"
+					}, {
+						"id": "PR02",
+						"title": "Medium",
+						"statuscolor": "Warning"
+					}],
+					"assignee": "03",
+					"comments": "1",
+					"commentlist": [{
+						"Author": "01",
+						"AuthorPicUrl": "",
+						"Type": "info",
+						"Date": "September 19 2017",
+						"Text": "The Task required more time on planning"
+					}],
+					"attachments": "0"
+				}]
+			}],
+			"scope": "Display"
+		}
+
+	],
+
+	"StatusCollection": [{
+		"id": "S01",
+		"title": "New",
+		"color": "Grey",
+		"class": "TMSStatusNew"
+	}, {
+		"id": "S02",
+		"title": "In Progress",
+		"color": "Blue",
+		"class": "TMSStatusInProgress"
+	}, {
+		"id": "S03",
+		"title": "Completed",
+		"color": "Green",
+		"class": "TMSStatusCompleted"
+	}],
+
+	"TasksCollection": [{
+		"id": "T01",
+		"title": "Simple Task",
+		"description": "This is a new task with high priority",
+		"type": {
+			"id": "TY01",
+			"title": "Requirement",
+			"icon": "sap-icon://add-activity",
+			"weightage": "100"
+		},
+		"priority": [{
+			"id": "PR03",
+			"title": "Low",
+			"statuscolor": "Success"
+		}, {
+			"id": "PR02",
+			"title": "Medium",
+			"statuscolor": "Warning"
+		}, {
+			"id": "PR01",
+			"title": "High",
+			"statuscolor": "Error"
+		}],
+		"assignee": "01",
+		"comments": 27,
+		"commentlist": [{
+			"Author": "01",
+			"AuthorPicUrl": "",
+			"Type": "info",
+			"Date": "September 19 2017",
+			"Text": "The Task required more time on planning"
+		}],
+		"attachments": "0"
+	}, {
+		"id": "T02",
+		"title": "Bug due to cache",
+		"description": "Requires user to hard reload",
+		"type": {
+			"id": "TY03",
+			"title": "Bug",
+			"icon": "sap-icon://warning2",
+			"weightage": "10"
+		},
+		"priority": [{
+			"id": "PR03",
+			"title": "Low",
+			"statuscolor": "Success"
+		}],
+		"assignee": "02",
+		"comments": 2,
+		"commentlist": [{
+			"Author": "01",
+			"AuthorPicUrl": "",
+			"Type": "info",
+			"Date": "September 19 2017",
+			"Text": "The Task required more time on planning"
+		}],
+		"attachments": "0"
+	}, {
+		"id": "T03",
+		"title": "Add Comments Section",
+		"description": "This is a task with medium priority",
+		"type": {
+			"id": "TY02",
+			"title": "Enhancement",
+			"icon": "sap-icon://activate",
+			"weightage": "50"
+		},
+		"priority": [{
+			"id": "PR03",
+			"title": "Low",
+			"statuscolor": "Success"
+		}, {
+			"id": "PR02",
+			"title": "Medium",
+			"statuscolor": "Warning"
+		}],
+		"assignee": "02",
+		"comments": 10,
+		"commentlist": [],
+		"attachments": "0"
+	}, {
+		"id": "T04",
+		"title": "Create Custom Control for UI5 Page",
+		"description": "Long description about the requirement should be fitting well enough to play and modify data",
+		"type": {
+			"id": "TY01",
+			"title": "Requirement",
+			"icon": "sap-icon://add-activity",
+			"weightage": "10"
+		},
+		"priority": [{
+			"id": "PR03",
+			"title": "Low",
+			"statuscolor": "Success"
+		}, {
+			"id": "PR02",
+			"title": "Medium",
+			"statuscolor": "Warning"
+		}],
+		"assignee": "03",
+		"comments": 18,
+		"commentlist": [{
+			"Author": "01",
+			"AuthorPicUrl": "",
+			"Type": "info",
+			"Date": "September 19 2017",
+			"Text": "The Task required more time on planning"
+		}],
+		"attachments": "0"
+	}],
+
+	"TypesCollection": [{
+		"id": "TY01",
+		"title": "Requirement",
+		"icon": "sap-icon://add-activity",
+		"weightage": "100"
+	}, {
+		"id": "TY02",
+		"title": "Enhancement",
+		"icon": "sap-icon://activate",
+		"weightage": "50"
+	}, {
+		"id": "TY03",
+		"title": "Bug",
+		"icon": "sap-icon://warning2",
+		"weightage": "10"
+	}],
+
+	"PrioritiesCollection": [{
+		"id": "PR01",
+		"title": "High",
+		"statuscolor": "Error"
+	}, {
+		"id": "PR02",
+		"title": "Medium",
+		"statuscolor": "Warning"
+	}, {
+		"id": "PR03",
+		"title": "Low",
+		"statuscolor": "Success"
+	}]
+
+
+}

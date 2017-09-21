@@ -1,0 +1,24 @@
+{
+	"newuser": {
+		"firstname": "",
+		"lastname": "",
+		"email": "",
+		"username": "",
+		"password": ""
+	},
+
+	"newproject": {
+		"id": "",
+		"code": "dev",
+		"title": "",
+		"description": "",
+		"status": {
+			"id": "S01",
+			"title": "New",
+			"color": "Grey",
+			"class": "TMSStatusNew"
+		},
+		"scope": "",
+		"statuslist": []
+	}
+}

@@ -1,0 +1,42 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="TMS.controller.login" xmlns:tnt="sap.tnt"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
+	<Page title="Title" showHeader="false" class="loginpage  " enableScrolling="false">
+		<content>
+			<tnt:ToolHeader>
+				<ToolbarSpacer width="40%"/>
+				<Title text="{i18n>title}"></Title>
+			</tnt:ToolHeader>
+			<VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
+				<items>
+					<l:BlockLayout id="BlockLayoutTwo">
+						<l:BlockLayoutRow>
+							<l:BlockLayoutCell class="loginPanel" id="idLoginPanel" title="{i18n>login}" backgroundColorSet="ColorSet10" backgroundColorShade="ShadeA">
+								<VBox class="loginpanel" width="350px">
+									<Input id="idUserNameFeild" placeholder="{i18n>username}"></Input>
+									<Input id="idPasswordFeild" type="Password" placeholder="{i18n>password}"></Input>
+									<HBox justifyContent="Center" alignItems="Center" alignContent="Center">
+										<Button press="handleLoginPress" class="sapUiSmallMarginEnd" text="{i18n>submit}" type="Emphasized"/>
+										<Button press="handleShowRegister" text="Register" type="Emphasized"/>
+									</HBox>
+								</VBox>
+							</l:BlockLayoutCell>
+							<l:BlockLayoutCell id="idRegisterPanel" title="Register" visible="hidden" backgroundColorSet="ColorSet10" backgroundColorShade="ShadeB">
+								<VBox class="registerpanel" width="350px">
+									<Input placeholder="{i18n>firstname}" value="{appstate>/newuser/firstname}" valueLiveUpdate="true"></Input>
+									<Input placeholder="{i18n>lastname}" value="{appstate>/newuser/lastname}" valueLiveUpdate="true"></Input>
+									<Input type="Email" placeholder="{i18n>email}" value="{appstate>/newuser/email}" valueLiveUpdate="true"></Input>
+									<Input placeholder="{i18n>username}" value="{appstate>/newuser/username}" valueLiveUpdate="true"></Input>
+									<Input type="Password" placeholder="password" value="{appstate>/newuser/password}" valueLiveUpdate="true"></Input>
+									<HBox justifyContent="Center" alignItems="Center" alignContent="Center">
+										<Button press="handleRegisterUser" class="sapUiSmallMarginEnd" text="{i18n>submit}" type="Emphasized"/>
+										<Button press="handleCancelPress" text="{i18n>cancel}" type="Emphasized"/>
+									</HBox>
+								</VBox>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</items>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

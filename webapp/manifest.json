@@ -1,0 +1,162 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "TMS",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"dataSources": {
+			"login_init_data": {
+				"uri": "model/login_data.json",
+				"type": "JSON"
+			},
+			"task_init_data": {
+				"uri": "model/project_data.json",
+				"type": "JSON"
+			}
+		},
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "TMS.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": false
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "TMS.i18n.i18n"
+				}
+			},
+			"init_login": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "login_init_data"
+			},
+			"appstate": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "task_init_data"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "TMS.view",
+				"controlAggregation": "pages",
+				"async": true,
+				"controlId": "app"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "login",
+					"target": [
+						"login"
+					]
+				},
+				{
+					"pattern": "dashboard/{userid}",
+					"name": "dashboard",
+					"target": [
+						"dashboard"
+					]
+				},
+				{
+					"pattern": "storyboard/{userid}/{projectid}",
+					"name": "storyboard",
+					"target": [
+						"storyboard"
+					]
+				},
+				{
+					"pattern": "report/{userid}",
+					"name": "report",
+					"target": [
+						"report"
+					]
+				}
+			],
+			"targets": {
+				"login": {
+					"viewName": "login",
+					"viewId": "login",
+					"viewLevel": 1
+				},
+				"dashboard": {
+					"viewName": "landingpage",
+					"viewId": "landingpage",
+					"viewLevel": 2
+				},
+				"storyboard": {
+					"viewName": "storyboard",
+					"viewId": "storyboard",
+					"viewLevel": 2
+				},
+				"report": {
+					"viewName": "myreport",
+					"viewId": "myreport",
+					"viewLevel": 2
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}
