@@ -14,10 +14,6 @@
                 "uri": "model/login_data.json",
                 "type": "JSON"
             },
-            "app_state": {
-                "uri": "model/app_state.json",
-                "type": "JSON"
-            },
             "task_init_data": {
                 "uri": "model/project_data.json",
                 "type": "JSON"

@@ -4,7 +4,6 @@
 			"code": "Dev",
 			"title": "Welcome Project",
 			"description": "Description of the prject in brief",
-			"overallstatus": "In Progress",
 			"statuslist": [{
 				"id": "S01",
 				"title": "New",

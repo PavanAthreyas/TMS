@@ -28,18 +28,18 @@ sap.ui.define(['jquery.sap.global',
 						type: "string",
 						defaultValue: null,
 						bindable: "bindable"
+					},
+					"status": {
+						type: "string",
+						defaultValue: null,
+						bindable: "bindable"
 					}
 				},
 				aggregations: {},
 				associations: {},
 				events: {
-					// tap: {},
 					press: {}
 				},
-				// ,
-				// onclick: function(evt) {
-				// 	this.firePress();
-				// },
 				renderer: "TMS.control.TaskCardRenderer"
 			}
 		});
@@ -47,7 +47,7 @@ sap.ui.define(['jquery.sap.global',
 		oStatusCard.prototype.ontap = function(oEvent) {
 			this.firePress();
 		};
-		
+
 		oStatusCard.prototype.onpress = function(oEvent) {
 			this.firePress();
 		};

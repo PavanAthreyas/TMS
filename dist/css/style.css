@@ -80,22 +80,33 @@
     backface-visibility: hidden;
 }
 
+
+/* Comments giving a hard time to align itself */
+
 .sapMFeedListItem .sapMFeedListItemTextText .sapMFeedListItemTextString {
     line-height: 2.4;
 }
 
+
+/* Again Feed control doesnt have width property */
+
 .sapUiRespGridMedia-Std-Tablet.sapUiRespGridHSpace0>.sapUiRespGridSpanM2 {
     width: 100%;
 }
+
+
+/* UL to have minimum height for dropping empty container */
+
 .sapMListUl {
-	height:auto;
-	min-height:200px;
+    height: auto;
+    min-height: 200px;
 }
 
 .back {
     background: #03446A;
     color: white;
     transform: rotateY( 180deg);
+    line-height: 25px;
 }
 
 .TMSUiDraggable {

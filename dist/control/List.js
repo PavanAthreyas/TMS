@@ -15,13 +15,6 @@ sap.ui.define([
 				"dragID": {
 					type: "string",
 					defaultValue: null
-				},
-				aggregations: {
-					cardholder: {
-						type: "sap.ui.core.Control",
-						multiple: true,
-						bindable: "bindable"
-					}
 				}
 
 			}
