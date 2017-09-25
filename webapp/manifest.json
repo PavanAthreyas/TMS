@@ -7,6 +7,8 @@
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
+		"ach": "TMS-UI5",
+		"resources": "resources.json",
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"dataSources": {
@@ -57,7 +59,6 @@
 				"sap.m": {},
 				"sap.ui.layout": {},
 				"sap.ushell": {},
-				"sap.collaboration": {},
 				"sap.ui.comp": {},
 				"sap.uxap": {}
 			}
@@ -94,36 +95,31 @@
 				"async": true,
 				"controlId": "app"
 			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "login",
-					"target": [
-						"login"
-					]
-				},
-				{
-					"pattern": "dashboard/{userid}",
-					"name": "dashboard",
-					"target": [
-						"dashboard"
-					]
-				},
-				{
-					"pattern": "storyboard/{userid}/{projectid}",
-					"name": "storyboard",
-					"target": [
-						"storyboard"
-					]
-				},
-				{
-					"pattern": "report/{userid}",
-					"name": "report",
-					"target": [
-						"report"
-					]
-				}
-			],
+			"routes": [{
+				"pattern": "",
+				"name": "login",
+				"target": [
+					"login"
+				]
+			}, {
+				"pattern": "dashboard/{userid}",
+				"name": "dashboard",
+				"target": [
+					"dashboard"
+				]
+			}, {
+				"pattern": "storyboard/{userid}/{projectid}",
+				"name": "storyboard",
+				"target": [
+					"storyboard"
+				]
+			}, {
+				"pattern": "report/{userid}",
+				"name": "report",
+				"target": [
+					"report"
+				]
+			}],
 			"targets": {
 				"login": {
 					"viewName": "login",
@@ -148,11 +144,9 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		}
 	},
 	"sap.platform.hcp": {

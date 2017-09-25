@@ -61,6 +61,9 @@
             "name": "css/preview.jpg"
         },
         {
+            "name": "css/.nfs0000000002eee348000009a8"
+        },
+        {
             "name": "css/main.less"
         },
         {
@@ -77,10 +80,11 @@
             "raw": "i18n/i18n.properties"
         },
         {
-            "name": "control/TaskCard.js"
+            "name": "i18n/i18n_en.properties",
+            "raw": "i18n/i18n.properties"
         },
         {
-            "name": "control/InPlaceEditTextArea.js"
+            "name": "control/TaskCard.js"
         },
         {
             "name": "control/List.js"

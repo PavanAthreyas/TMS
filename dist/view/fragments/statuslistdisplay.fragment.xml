@@ -48,7 +48,7 @@
 					<f:FormContainer title="{i18n>comments}">
 						<f:formElements>
 							<f:FormElement>
-								<FeedInput post="handleOnCommentPost" icon="sap-icon://discussion-2" class="sapUiSmallMarginTopBottom">
+								<FeedInput post="handleOnCommentPost" icon="sap-icon://discussion-2" class="sapUiSmallMarginTopBottom commentsections">
 									<layoutData>
 										<l:GridData span="XL4 L12 M10 S4"/>
 									</layoutData>

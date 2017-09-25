@@ -41,6 +41,10 @@ sap.ui.define([
 		//
 		//	}
 
+		/**
+		 * Event handler form Home Button Press
+		 * @memberOf TMS.view.header
+		 */
 		handleHomePress: function() {
 			var oRouter = this.getOwnerComponent().getRouter();
 			oRouter.navTo("dashboard", {
@@ -48,6 +52,11 @@ sap.ui.define([
 			});
 		},
 
+		/**
+		 * Event handler on Menu Item click
+		 * @memberOf TMS.view.header
+		 * @param {sap.ui.base.Event} oEvent of the button click
+		 */
 		handleMenuItemPress: function(oEvent) {
 			var sKey = oEvent.getParameter("item").getKey();
 			if (sKey === "2") {
@@ -57,14 +66,22 @@ sap.ui.define([
 			}
 		},
 
-		HandleReportPress: function(oEvent) {
+		/**
+		 * Event handler on view report button click
+		 * @memberOf TMS.view.header
+		 */
+		handleReportPress: function() {
 			var oRouter = this.getOwnerComponent().getRouter();
 			oRouter.navTo("report", {
 				userid: this.getView().getModel("appstate").getProperty("/loggedinuser").id
 			});
 		},
 
-		handleLogoutRequest: function(oEvent) {
+		/**
+		 * Event handler on logout action
+		 * @memberOf TMS.view.header
+		 */
+		handleLogoutRequest: function() {
 			LoginHandler.setCurrentUserDetails({});
 			this.getOwnerComponent().getRouter().navTo("login");
 		}

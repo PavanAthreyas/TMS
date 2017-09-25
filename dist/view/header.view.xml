@@ -13,7 +13,7 @@
 			</layoutData>
 		</Title>
 		<ToolbarSpacer/>
-		<Button icon="sap-icon://learning-assistant" type="Transparent" press="HandleReportPress"></Button>
+		<Button icon="sap-icon://learning-assistant" type="Transparent" press="handleReportPress"></Button>
 		<MenuButton type="Transparent" class="usermenu" text="{appstate>/loggedinuser/firstname} {appstate>/loggedinuser/lastname}">
 			<layoutData>
 				<OverflowToolbarLayoutData priority="Never"/>

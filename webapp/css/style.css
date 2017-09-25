@@ -94,6 +94,10 @@
     width: 100%;
 }
 
+.commentsections{
+	width :100% !important;
+}
+
 
 /* UL to have minimum height for dropping empty container */
 

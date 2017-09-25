@@ -42,7 +42,7 @@
 														<ToolbarSpacer/>
 														<ToolbarSpacer/>
 														<VBox class="sapUiTinyMarginTopBottom" alignItems="End">
-															<Label text="{appstate>type/title}"/>
+															<Label class="sapUiTinyMarginTop" text="{appstate>type/title}"/>
 															<f:Avatar src="{appstate>type/icon}" class="sapUiTinyMarginBottom" displaySize="XS"></f:Avatar>
 														</VBox>
 													</Toolbar>

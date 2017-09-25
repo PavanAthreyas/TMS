@@ -213,6 +213,7 @@ sap.ui.define([
 			oTaskScope.comments = aCommentList.length;
 			this.oAppStateModel.refresh();
 		},
+
 		/**
 		 * Callback handler on press event of plus icon 
 		 * @memberOf TMS.view.storyboard 
@@ -260,6 +261,10 @@ sap.ui.define([
 			if (this.bEditTrue) {
 				this.handleCloseEditPopover();
 				this.oAppStateModel.refresh();
+				var aTaskCollection = this.oMainModel.getProperty("/TasksCollection");
+				var iIndex = TMSHandler.getTasksFromTaskCollection(oTempTasks.id);
+				aTaskCollection[iIndex] = oTempTasks;
+				this.oMainModel.refresh();
 				return;
 			}
 			if (oTempTasks.title === "") {
@@ -269,14 +274,32 @@ sap.ui.define([
 				this.handleCloseEditPopover();
 			}
 		},
+
+		/**
+		 * Callback handler on press event of plus icon 
+		 * @memberOf TMS.view.fragments.statuslist 
+		 * @param {sap.ui.base.Event} oEvent the button press event
+		 */
 		handleSuggestionItemSelected: function(oEvent) {
 			if (oEvent.getParameter("selectedItem")) {
 				var sId = oEvent.getParameter("selectedItem").getKey();
 				var oTempTask = this.oAppStateModel.getProperty("/taskscope");
 				oTempTask.assignee = sId;
+				var sIndex = TMSHandler.getTasksFromTaskCollection(oTempTask.id);
+				if (sIndex > -1) {
+					var aTaskCollection = this.oMainModel.getProperty("/TasksCollection");
+					aTaskCollection[sIndex].assignee = sId;
+				}
+
 			}
 
 		},
+
+		/**
+		 * Callback handler on press event of plus icon 
+		 * @memberOf TMS.view.fragments.statuslist 
+		 * @param {sap.ui.base.Event} oEvent the button press event
+		 */
 
 		handleTaskEditPress: function(oEvent) {
 			this._oPopover.close();
@@ -312,7 +335,7 @@ sap.ui.define([
 		},
 
 		/**
-		 * Callback handler on press event of suggest username
+		 * Callback handler on live change of search bar
 		 * @memberOf TMS.view.storyboard 
 		 * @param {sap.ui.base.Event} oEvent the button press event
 		 */
@@ -326,7 +349,7 @@ sap.ui.define([
 		},
 
 		/**
-		 * Callback handler on press event of display Task
+		 * Callback handler on press event of Show Task Icon
 		 * @memberOf TMS.view.storyboard 
 		 * @param {sap.ui.base.Event} oEvent the button press event
 		 */
