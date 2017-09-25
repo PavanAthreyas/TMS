@@ -89,13 +89,19 @@ sap.ui.define([], function() {
 			}
 		},
 
-		removeTaksFromTaskCollection: function(sTaskId) {
+		getTasksFromTaskCollection: function(sTaskId) {
 			var aTasks = this.oMainModel.getProperty("/TasksCollection");
 
 			function findTask(oList) {
 				return oList.id === sTaskId;
 			}
-			var iIndex = aTasks.findIndex(findTask);
+			return aTasks.findIndex(findTask);
+		},
+
+		removeTaksFromTaskCollection: function(sTaskId) {
+			var aTasks = this.oMainModel.getProperty("/TasksCollection");
+
+			var iIndex = this.getTasksFromTaskCollection(sTaskId);
 			aTasks.splice(iIndex, 1);
 			this.oMainModel.refresh();
 		},
