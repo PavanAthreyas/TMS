@@ -59,8 +59,10 @@ sap.ui.define([
 			var aFilters = [];
 			var oUserFilter = new sap.ui.model.Filter("assignee", sap.ui.model.FilterOperator.EQ, this.oUser.id);
 			aFilters.push(oUserFilter);
+			//Filters for Charts
 			var oVizFrame = this.getView().byId("idVizFrame");
 			oVizFrame.getDataset().getBinding("data").filter(aFilters);
+			//Filters for List
 			var oList = this.getView().byId("idTaskMyList");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilters);
