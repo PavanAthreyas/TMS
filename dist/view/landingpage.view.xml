@@ -3,17 +3,17 @@
 	<Page class="dashboardpage " title="{i18n>title}" showHeader="false" enableScrolling="false">
 		<content>
 			<mvc:XMLView viewName="TMS.view.header"/>
-			<!--<TMS:TaskCard title="bitch" description="ohyes"></TMS:TaskCard>-->
-			<HBox height="100px" alignItems="Start" justifyContent="End">
+			<HBox height="50px" alignItems="Start" justifyContent="End">
 				<items>
 					<Button icon="sap-icon://add" class="sapUiTinyMarginEnd" type="Transparent" press="handleCreateProject"/>
 					<Button icon="sap-icon://edit" id="idProjectEdit" class="sapUiTinyMarginEnd" type="Transparent" press="handleProjectEditPress"/>
 				</items>
 			</HBox>
 			<HBox justifyContent="Center" alignItems="Center" alignContent="Center" items="{/ProjectCollection}">
-				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop projecttile" scope="{scope}" header="{title}" subheader="{overallstatus}"
-					frameType="OneByOne" press="HandleProjectPress"></GenericTile>
-				<!--<TMS:TaskCard title="{title}" scope="{scope}" press="HandleProjectPress" description="{description}"></TMS:TaskCard>-->
+				<!--<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop projecttile" scope="{scope}" header="{title}" subheader="{overallstatus}"-->
+				<!--	frameType="OneByOne" press="HandleProjectPress"></GenericTile>-->
+				<TMS:TaskCard title="{title}" scope="{scope}" description="{description}" listCount="{listcount}" memberCount="{membercount}"
+					taskCount="{taskcount}" createdDate="{createddate}" class="sapUiSmallMarginEnd" press="HandleProjectPress"></TMS:TaskCard>
 			</HBox>
 		</content>
 	</Page>

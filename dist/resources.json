@@ -1,89 +1,6 @@
 {
     "resources": [
         {
-            "name": "extended_runnable_file.html"
-        },
-        {
-            "name": "controller/landingpage.controller.js"
-        },
-        {
-            "name": "controller/storyboard.controller.js"
-        },
-        {
-            "name": "controller/header.controller.js"
-        },
-        {
-            "name": "controller/App.controller.js"
-        },
-        {
-            "name": "controller/myreport.controller.js"
-        },
-        {
-            "name": "controller/login.controller.js"
-        },
-        {
-            "name": "fioriHtmlRunner.html"
-        },
-        {
-            "name": "manifest.json"
-        },
-        {
-            "name": "view/login.view.xml"
-        },
-        {
-            "name": "view/App.view.xml"
-        },
-        {
-            "name": "view/header.view.xml"
-        },
-        {
-            "name": "view/myreport.view.xml"
-        },
-        {
-            "name": "view/fragments/statuslistedit.fragment.xml"
-        },
-        {
-            "name": "view/fragments/addproject.fragment.xml"
-        },
-        {
-            "name": "view/fragments/statuslistdisplay.fragment.xml"
-        },
-        {
-            "name": "view/storyboard.view.xml"
-        },
-        {
-            "name": "view/landingpage.view.xml"
-        },
-        {
-            "name": "css/style.css"
-        },
-        {
-            "name": "css/preview.jpg"
-        },
-        {
-            "name": "css/.nfs0000000002eee348000009a8"
-        },
-        {
-            "name": "css/main.less"
-        },
-        {
-            "name": "localservice/loginhandler.js"
-        },
-        {
-            "name": "localservice/tmshandler.js"
-        },
-        {
-            "name": "localservice/formatter.js"
-        },
-        {
-            "name": "i18n/i18n.properties",
-            "raw": "i18n/i18n.properties"
-        },
-        {
-            "name": "i18n/i18n_en.properties",
-            "raw": "i18n/i18n.properties"
-        },
-        {
             "name": "control/TaskCard.js"
         },
         {
@@ -96,7 +13,40 @@
             "name": "Component.js"
         },
         {
-            "name": "index.html"
+            "name": "view/header.view.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/myreport.view.xml"
+        },
+        {
+            "name": "view/fragments/addproject.fragment.xml"
+        },
+        {
+            "name": "view/fragments/statuslistedit.fragment.xml"
+        },
+        {
+            "name": "view/fragments/statuslistdisplay.fragment.xml"
+        },
+        {
+            "name": "view/storyboard.view.xml"
+        },
+        {
+            "name": "view/login.view.xml"
+        },
+        {
+            "name": "view/landingpage.view.xml"
+        },
+        {
+            "name": "localservice/loginhandler.js"
+        },
+        {
+            "name": "localservice/tmshandler.js"
+        },
+        {
+            "name": "localservice/formatter.js"
         },
         {
             "name": "model/login_data.json"
@@ -108,8 +58,52 @@
             "name": "model/models.js"
         },
         {
+            "name": "manifest.json"
+        },
+        {
             "name": "Component-preload.js",
             "merged": true
+        },
+        {
+            "name": "extended_runnable_file.html"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "css/creating.jpg"
+        },
+        {
+            "name": "css/preview.jpg"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n_en.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "controller/myreport.controller.js"
+        },
+        {
+            "name": "controller/login.controller.js"
+        },
+        {
+            "name": "controller/header.controller.js"
+        },
+        {
+            "name": "controller/storyboard.controller.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/landingpage.controller.js"
         },
         {
             "name": "neo-app.json"

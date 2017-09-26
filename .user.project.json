@@ -1,24 +1,6 @@
 {
   "run": [
     {
-      "filePath": "/webapp/index.html",
-      "previewMode": 1,
-      "dataMode": 1,
-      "workspace": "withoutWorkspace",
-      "ui5ActiveVersion": null,
-      "ui5VerSource": null,
-      "isDefaultVersion": 0,
-      "urlParameters": [],
-      "hashParameter": "",
-      "backendSystem": [],
-      "_metadata": {
-        "id": 3513719,
-        "runnerId": "webapprunner",
-        "displayName": "Run index.html",
-        "lastRunTimeStamp": 1506426192414
-      }
-    },
-    {
       "filePath": "/dummy.html",
       "previewMode": 1,
       "dataMode": 1,
@@ -33,7 +15,25 @@
         "id": 1603030,
         "runnerId": "webapprunner",
         "displayName": "Run dummy.html",
-        "lastRunTimeStamp": 1505948073342
+        "lastRunTimeStamp": 1506459242086
+      }
+    },
+    {
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "id": 3513719,
+        "runnerId": "webapprunner",
+        "displayName": "Run index.html",
+        "lastRunTimeStamp": 1506455464323
       }
     },
     {
@@ -56,6 +56,6 @@
     }
   ],
   "hybrid": {
-    "dirty": true
+    "dirty": false
   }
 }

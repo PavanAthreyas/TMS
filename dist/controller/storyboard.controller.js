@@ -159,12 +159,13 @@ sap.ui.define([
 		 */
 		updateDrop: function(e, ui) {
 			var sItemID = ui.item.attr("id");
+			var oTaskElement = sap.ui.getCore().byId(sItemID);
+			var sItemContext = oTaskElement.getBindingContextPath();
 			var sContainerID = $("#" + e.toElement.id).closest('ul').attr('id');
 			sContainerID = sContainerID.replace("-listUl", "");
-			var sItemContext = sap.ui.getCore().byId(sItemID).getBindingContextPath();
 			var oListUL = sap.ui.getCore().byId(sContainerID);
-			var sCurrentContextTaskId = oListUL.getItems()[0].data("taskid");
-			TMSHandler.updateItemDragged(sItemContext, sCurrentContextTaskId);
+			var sStatusListId = oListUL.data("statusid");
+			TMSHandler.updateItemDragged(sItemContext, sStatusListId);
 
 		},
 

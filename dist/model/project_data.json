@@ -2,8 +2,13 @@
 	"ProjectCollection": [{
 			"id": "01",
 			"code": "Dev",
-			"title": "Welcome Project",
-			"description": "Description of the prject in brief",
+			"title": "Welcome",
+			"description": "Demo project containing demo data for Task Management System",
+			"listcount" : 3,
+			"membercount": 3,
+			"taskcount" : 4,
+			"activesince" : 4,
+			"createddate" : "September 18 2017",
 			"statuslist": [{
 				"id": "S01",
 				"title": "New",

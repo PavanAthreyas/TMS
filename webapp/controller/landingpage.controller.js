@@ -37,7 +37,7 @@ sap.ui.define([
 				var sMsg = this.oResourceBundle.getText("noauth");
 				MessageToast.show(sMsg);
 			}
-
+			this.setProjectParameters();
 		},
 
 		/**
@@ -128,21 +128,19 @@ sap.ui.define([
 		 * @param {sap.ui.base.Event} oEvent the button press event
 		 */
 		HandleProjectPress: function(oEvent) {
-			var sScope = oEvent.getParameter("scope");
-			var sAction = oEvent.getParameter("action");
+			var sScope = oEvent.getSource().getScope();
+			var sClassName = oEvent.getSource().getScopeClassName();
 			var sPath = oEvent.getSource().getBindingContext().sPath;
-			if (sAction === "Remove") {
+			if (sClassName === "closebutton") {
 				TMSHandler.removeProject(sPath);
-			}
-			if (sAction === "Press" && sScope === "Actions") {
+			} else if (sScope === "Actions") {
 				this.openEditPerspective(sPath);
 				this.bProjectEdit = true;
-			}
-			if (sAction === "Press" && sScope === "Display") {
+			} else if (sScope === "Display") {
 				var sCurrentProjectScope = TMSHandler.getProjectById(this.oMainModel.getProperty(sPath).id);
 				TMSHandler.setProjectScope(sCurrentProjectScope);
 				this.oRouter.navTo("storyboard", {
-					userid : this.sUserId,
+					userid: this.sUserId,
 					projectid: this.oMainModel.getProperty(sPath).id
 				});
 			}
@@ -167,6 +165,21 @@ sap.ui.define([
 			jQuery.sap.delayedCall(0, this, function() {
 				this._oDialog.open();
 			});
+		},
+		
+		setProjectParameters: function() {
+			var aProjects = this.getView().getModel().getProperty("/ProjectCollection");
+			if(aProjects.length === 1) {
+				var aStatsuList =  aProjects[0].statuslist;
+				aProjects[0].listcount = aStatsuList.length;
+				aProjects[0].membercount = this.getView().getModel("init_login").getData().length;
+				var iTaskCount = 0;
+				for (var iCount = 0; iCount < aStatsuList.length; iCount++ ) {
+					iTaskCount += aStatsuList[iCount].tasklist.length;
+				}
+				aProjects[0].taskcount = iTaskCount;
+				this.getView().getModel().refresh();
+			}
 		}
 
 	});

@@ -18,15 +18,18 @@
 			data-sap-ui-resourceroots='{"TMS": ""}'>
 		</script>
 
-		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script>
 			sap.ui.getCore().attachInit(function() {
-				new sap.m.Shell({
-					app: new sap.ui.core.ComponentContainer({
+				// new sap.m.Shell({
+				// 	app: new sap.ui.core.ComponentContainer({
+				// 		height : "100%",
+				// 		name : "TMS"
+				// 	})
+				// }).placeAt("content");
+				new sap.ui.core.ComponentContainer({
 						height : "100%",
 						name : "TMS"
-					})
-				}).placeAt("content");
+					}).placeAt("content");
 			});
 		</script>
 		
