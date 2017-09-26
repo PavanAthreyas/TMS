@@ -243,6 +243,22 @@ sap.ui.define([], function() {
 		},
 
 		/**
+		 * Method to get the status list id when status list id is known
+		 * @memberOf TMS.localService.TMSHandler
+		 * @param {string} - sTaskId - id of the Task
+		 *  @return {int} - returns a index value of the selected task
+		 */
+		getStatusListIndexbyID: function(sStatusId) {
+			var oCurrentProject = this.oAppStateModel.getProperty("/currentproject");
+			var aStatusList = oCurrentProject.statuslist;
+
+			function findStatusList(oList) {
+				return oList.id === sStatusId;
+			}
+			return aStatusList.findIndex(findStatusList);
+		},
+
+		/**
 		 * Method to get the type object when the user selects a particular type
 		 * @memberOf TMS.localService.TMSHandler
 		 * @param {string} - sTypeId - id of the selected type
@@ -264,11 +280,11 @@ sap.ui.define([], function() {
 		 * @param {string} - sDragElementContext - id of the selected typesPath of the task which was dragged and dropped
 		 *		  {string} - sDropContextTaskId - id of the context where the task was dropped.
 		 */
-		updateItemDragged: function(sDragElementContext, sDropContextTaskId) {
+		updateItemDragged: function(sDragElementContext, sStatusId) {
 			var oCurrentProject = this.oAppStateModel.getProperty("/currentproject");
 			var aStatusList = oCurrentProject.statuslist;
 			var oItem = this.oAppStateModel.getProperty(sDragElementContext);
-			var iIndex = this.getStatusListIndexByTaskId(sDropContextTaskId);
+			var iIndex = this.getStatusListIndexbyID(sStatusId);
 			this.removeTaskonID(oItem.id);
 			aStatusList[iIndex].tasklist.push(oItem);
 			this.oAppStateModel.refresh();
