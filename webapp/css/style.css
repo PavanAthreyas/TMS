@@ -107,18 +107,11 @@ body {
     border-bottom-left-radius: 0.5em;
 }
 
-.card-top span.project-type.learn {
-    background-color: #2ca58d;
-}
 
 .card-top span.project-type.create {
     background-color: #00a8e8;
 }
 
-.card-top span.project-type.ideas {
-    background-color: #EEFF22;
-    color: #000;
-}
 
 .progress {
     height: 0.31em;
@@ -129,7 +122,6 @@ body {
 
 .progress.create {
     background-color: #00a8e8;
-    width: 40%;
 }
 
 .progress span {

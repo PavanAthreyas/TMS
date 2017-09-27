@@ -55,10 +55,12 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer'],
 			oRm.write("<div");
 			oRm.addClass("progress create"); //May be create a class to set as property
 			oRm.writeClasses();
+			oRm.addStyle("width:"+ oControl.getStatus()); 
+			oRm.writeStyles();
 			oRm.write(">");
 
 			oRm.write("<span>");
-			oRm.writeEscaped("40%"); //Status Percentage (last status tasks/ total tasks)
+			oRm.writeEscaped(oControl.getStatus()); //Status Percentage (last status tasks/ total tasks)
 			oRm.write("</span>");
 			oRm.write("</div>");
 

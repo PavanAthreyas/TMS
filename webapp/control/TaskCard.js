@@ -31,7 +31,7 @@ sap.ui.define(['jquery.sap.global',
 					},
 					"status": {
 						type: "string",
-						defaultValue: null,
+						defaultValue: "20%",
 						bindable: "bindable"
 					},
 					"active": {
