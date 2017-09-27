@@ -15,7 +15,7 @@
 						<f:formElements>
 							<f:FormElement label="{i18n>taskname}">
 								<f:fields>
-									<Input id="idSEdittatusNewTitle" valueLiveUpdate="true" valueState="{appstate>/taskscope/titlestate}" value="{appstate>/taskscope/title}"/>
+									<Input id="idSEdittatusNewTitle" required="true" valueLiveUpdate="true" valueState="{appstate>/taskscope/titlestate}" value="{appstate>/taskscope/title}"/>
 								</f:fields>
 							</f:FormElement>
 							<f:FormElement label="{i18n>description}">

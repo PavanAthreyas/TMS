@@ -37,7 +37,9 @@ sap.ui.define([
 				var sMsg = this.oResourceBundle.getText("noauth");
 				MessageToast.show(sMsg);
 			}
-			this.setProjectParameters();
+
+			var iCount = this.getView().getModel("init_login").getData().length;
+			TMSHandler.setProjectParameters(iCount);
 		},
 
 		/**
@@ -53,12 +55,12 @@ sap.ui.define([
 			var oTempProject = {};
 			oTempProject.title = "";
 			oTempProject.description = "";
-			oTempProject.status = {
-				"id": "S01",
-				"title": "New",
-				"color": "Grey",
-				"class": "TMSStatusNew"
-			};
+			var oDate = new Date(),
+				locale = "en-us",
+				month = oDate.toLocaleString(locale, {
+					month: "long"
+				});
+			oTempProject.createddate = month + " " + oDate.getDate() + " " + oDate.getFullYear();
 			oTempProject.scope = "";
 			oTempProject.statuslist = [];
 			this.getView().getModel("appstate").setProperty("/newproject", oTempProject);
@@ -87,13 +89,18 @@ sap.ui.define([
 			} else {
 				oTempProject.scope = "Display";
 			}
-			if (!this.bProjectEdit) {
+
+			if (!this.bProjectEdit && oTempProject.title !== "") {
 				TMSHandler.registerProject(oTempProject);
+				this._oDialog.close();
+
+			} else if (oTempProject.title === "") {
+				MessageToast.show("Please enter a Project Title");
 			} else {
 				this.oMainModel.refresh();
+				this._oDialog.close();
 			}
 
-			this._oDialog.close();
 		},
 
 		/**
@@ -165,21 +172,6 @@ sap.ui.define([
 			jQuery.sap.delayedCall(0, this, function() {
 				this._oDialog.open();
 			});
-		},
-		
-		setProjectParameters: function() {
-			var aProjects = this.getView().getModel().getProperty("/ProjectCollection");
-			if(aProjects.length === 1) {
-				var aStatsuList =  aProjects[0].statuslist;
-				aProjects[0].listcount = aStatsuList.length;
-				aProjects[0].membercount = this.getView().getModel("init_login").getData().length;
-				var iTaskCount = 0;
-				for (var iCount = 0; iCount < aStatsuList.length; iCount++ ) {
-					iTaskCount += aStatsuList[iCount].tasklist.length;
-				}
-				aProjects[0].taskcount = iTaskCount;
-				this.getView().getModel().refresh();
-			}
 		}
 
 	});

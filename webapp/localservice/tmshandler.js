@@ -43,6 +43,49 @@ sap.ui.define([], function() {
 		},
 
 		/**
+		 * Method to update project parameters
+		 * @memberOf TMS.localService.TMSHandler
+		 */
+
+		setProjectParameters: function(iMemberCount) {
+			var aProjects = this.oMainModel.getProperty("/ProjectCollection");
+			var aStatsuList, iStatusLength, iTaskCount, sPercentage, iCount;
+			if (aProjects.length === 1) {
+				aStatsuList = aProjects[0].statuslist;
+				iStatusLength = aStatsuList.length;
+				aProjects[0].listcount = iStatusLength;
+				aProjects[0].membercount = iMemberCount;
+				iTaskCount = 0;
+				for (iCount = 0; iCount < aStatsuList.length; iCount++) {
+					iTaskCount += aStatsuList[iCount].tasklist.length;
+				}
+				aProjects[0].taskcount = iTaskCount;
+				//calculating project status
+				sPercentage = (aProjects[0].statuslist[iStatusLength - 1].tasklist.length / iTaskCount) * 100 + "%";
+				aProjects[0].overallprogress = sPercentage;
+			} else if (aProjects.length > 1) {
+				for (var iPcount = 0; iPcount < aProjects.length; iPcount++) {
+					aStatsuList = aProjects[iPcount].statuslist;
+					iStatusLength = aStatsuList.length;
+					aProjects[iPcount].listcount = iStatusLength;
+					aProjects[iPcount].membercount = iMemberCount;
+					iTaskCount = 0;
+					for (iCount = 0; iCount < aStatsuList.length; iCount++) {
+						iTaskCount += aStatsuList[iCount].tasklist.length;
+					}
+					aProjects[iPcount].taskcount = iTaskCount;
+					//calculating project status
+					if (iTaskCount > 0) {
+						sPercentage = parseInt((aProjects[iPcount].statuslist[iStatusLength - 1].tasklist.length / iTaskCount) * 100) + "%";
+						aProjects[iPcount].overallprogress = sPercentage;
+					}
+
+				}
+			}
+			this.oMainModel.refresh();
+		},
+
+		/**
 		 * Method to get the project instance from projectid
 		 * @memberOf TMS.localService.TMSHandler
 		 * @param {string} - sID - id of the project

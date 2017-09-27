@@ -8,7 +8,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer'],
 		 * @author Pavan Athreyas S J
 		 * @namespace
 		 */
-		var TaskCardRenderer = {};
+		var ProjectCardRenderer = {};
 
 		/**
 		 * Renders the HTML for the given control, using the provided {@link sap.ui.core.RenderManager}.
@@ -16,7 +16,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer'],
 		 * @param {sap.ui.core.RenderManager} oRm The RenderManager that can be used for writing to the render output buffer.
 		 * @param {sap.m.Text} oText An object representation of the control that should be rendered.
 		 */
-		TaskCardRenderer.render = function(oRm, oControl) {
+		ProjectCardRenderer.render = function(oRm, oControl) {
 			// get control values
 			var sTitle = oControl.getTitle(),
 				sDescription = oControl.getDescription(),
@@ -43,8 +43,15 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer'],
 			oRm.writeClasses();
 			oRm.write(">");
 			oRm.writeEscaped("Project");
+			if (sScope === "Actions") {
+				oRm.write("<div");
+				oRm.addClass("closebutton");
+				oRm.writeClasses();
+				oRm.write(">");
+				oRm.write("x");
+				oRm.write("</div>");
+			}
 			oRm.write("</span>");
-
 			oRm.write("<div");
 			oRm.addClass("blur");
 			oRm.writeClasses();
@@ -55,7 +62,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer'],
 			oRm.write("<div");
 			oRm.addClass("progress create"); //May be create a class to set as property
 			oRm.writeClasses();
-			oRm.addStyle("width:"+ oControl.getStatus()); 
+			oRm.addStyle("width", oControl.getStatus());
 			oRm.writeStyles();
 			oRm.write(">");
 
@@ -74,13 +81,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer'],
 			oRm.write(">");
 
 			oRm.write("<span>");
-			// if (iActive < 1) {
-			// 	oRm.writeEscaped("Active Today");
-			// } else if (iActive === 1) {
-			// 	oRm.writeEscaped("Active 1 day ago");
-			// } else if (iActive > 1) {
-			// 	oRm.writeEscaped("Active " + iActive + " days ago");
-			// }
 			oRm.writeEscaped("Created on: " + sCreatedDate);
 			oRm.write("</span>");
 			oRm.write("</div>");
@@ -140,48 +140,15 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer'],
 			oRm.write("</span>");
 			oRm.write("</div>");
 
-			//close of project-info
 			oRm.write("</div>");
 
-			//close of content
 			oRm.write("</div>");
-			//close of card container
+			
 			oRm.write("</div>");
 
-			// oRm.write("<div");
-			// oRm.addClass("frontdescription");
-			// oRm.writeClasses();
-			// oRm.write(">");
-			// oRm.writeEscaped(sTitle);
-			// oRm.write("</div>");
-
-			// oRm.write("</div>");
-
-			// oRm.write("<div");
-			// oRm.addClass("back");
-			// oRm.writeClasses();
-			// oRm.write(">");
-			// if (sScope === "Actions") {
-			// 	oRm.write("<div");
-			// 	oRm.addClass("closebutton");
-			// 	oRm.writeClasses();
-			// 	oRm.write(">");
-			// 	oRm.write("x");
-			// 	oRm.write("</div>");
-			// }
-			// oRm.write("<div");
-			// oRm.addClass("backdescription");
-			// oRm.writeClasses();
-			// oRm.write(">");
-			// oRm.writeEscaped(sDescription);
-			// oRm.write("</div>");
-			// oRm.write("</div>");
-
-			// oRm.write("</div>");
-			// oRm.write("</div>");
 
 		};
 
-		return TaskCardRenderer;
+		return ProjectCardRenderer;
 
 	}, /* bExport= */ true);

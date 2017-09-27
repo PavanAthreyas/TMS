@@ -16,7 +16,7 @@ sap.ui.define(['jquery.sap.global',
 		 * @public
 		 * @alias TMS.control.Taskcard
 		 */
-		var oStatusCard = Control.extend("TMS.control.TaskCard", /** @lends sap.m.CheckBox.prototype */ {
+		var oProjectCard = Control.extend("TMS.control.TaskCard", /** @lends sap.m.CheckBox.prototype */ {
 			metadata: {
 				properties: {
 					"title": {
@@ -31,7 +31,7 @@ sap.ui.define(['jquery.sap.global',
 					},
 					"status": {
 						type: "string",
-						defaultValue: null,
+						defaultValue: "0%",
 						bindable: "bindable"
 					},
 					"active": {
@@ -74,16 +74,16 @@ sap.ui.define(['jquery.sap.global',
 			}
 		});
 
-		oStatusCard.prototype.ontap = function(oEvent) {
+		oProjectCard.prototype.ontap = function(oEvent) {
 			var sClassName = oEvent.target.className;
 			this.setScopeClassName(sClassName);
 			this.firePress();
 		};
 
-		oStatusCard.prototype.onpress = function(oEvent) {
+		oProjectCard.prototype.onpress = function(oEvent) {
 			this.firePress();
 		};
 
-		return oStatusCard;
+		return oProjectCard;
 
 	}, /* bExport= */ true);

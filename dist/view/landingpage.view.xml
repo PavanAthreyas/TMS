@@ -13,7 +13,7 @@
 				<!--<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop projecttile" scope="{scope}" header="{title}" subheader="{overallstatus}"-->
 				<!--	frameType="OneByOne" press="HandleProjectPress"></GenericTile>-->
 				<TMS:TaskCard title="{title}" scope="{scope}" description="{description}" listCount="{listcount}" memberCount="{membercount}"
-					taskCount="{taskcount}" createdDate="{createddate}" class="sapUiSmallMarginEnd" press="HandleProjectPress"></TMS:TaskCard>
+					taskCount="{taskcount}" createdDate="{createddate}" status="{overallprogress}" class="sapUiLargeMarginEnd" press="HandleProjectPress"></TMS:TaskCard>
 			</HBox>
 		</content>
 	</Page>

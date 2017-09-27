@@ -2,9 +2,9 @@
 	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
 	<Dialog title="{i18n>title}">
 		<content>
-			<f:SimpleForm id="SimpleFormChange471" editable="true" title="{i18n>createproject}">
+			<f:SimpleForm id="SimpleFormChange471" editable="true" title="{i18n>projectdetails}">
 				<f:content>
-					<Label text="{i18n>name}"/>
+					<Label required="true" text="{i18n>name}"/>
 					<Input value="{appstate>/newproject/title}" valueLiveUpdate="true"/>
 					<Label text="{i18n>description}"/>
 					<Input value="{appstate>/newproject/description}"></Input>

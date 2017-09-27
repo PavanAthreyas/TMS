@@ -6,6 +6,7 @@
 			"description": "Demo project containing demo data for Task Management System",
 			"listcount" : 3,
 			"membercount": 3,
+			"overallprogress": "25%",
 			"taskcount" : 4,
 			"activesince" : 4,
 			"createddate" : "September 18 2017",

@@ -8,8 +8,8 @@
   "build": {
     "targetFolder": "dist",
     "sourceFolder": "webapp",
-    "buildRequired": true,
-    "lastBuildDateTime": "Tue, 26 Sep 2017 23:55:31 GMT"
+    "buildRequired": false,
+    "lastBuildDateTime": "Wed, 27 Sep 2017 10:43:50 GMT"
   },
   "generation": [
     {
@@ -60,6 +60,6 @@
   "hcpdeploy": {
     "account": "p1941230732trial",
     "name": "tms",
-    "lastVersionWeTriedToDeploy": "1.0.2"
+    "lastVersionWeTriedToDeploy": "1.0.3"
   }
 }
